@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Player</title>
+<style>
+    #video-player {
+        display: flex;
+        max-width: 100%;
+        overflow: hidden;
+    }
+    #playlist {
+        width: 200px;
+        margin-right: 20px;
+        overflow-y: auto;
+    }
+    #video-container {
+        /*flex: 100;*/
+        width: calc(100% + 220px);
+        overflow: hidden;
+    }
+    video {
+        width: 100%;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+
+<div id="video-player">
+    <div id="playlist">
+        <ul id="playlist-list">
+            <li onclick="playVideo('https://fash1043.cloudycdn.services/slive/_definst_/ftv_ftv_paris_pg_4dg_27027_paris_pg18_188_hls.smil/chunklist_b1400000_t64NDgwcA==.m3u8?checkedby:iptvcat.com')">FTV 1</li>
+            <li onclick="playVideo('http://lb.streaming.sk/fashiontv/stream/playlist.m3u8?checkedby:iptvcat.com')">FTV 2</li>
+            <li onclick="playVideo('https://fash1043.cloudycdn.services/slive/_definst_/ftv_midnite_secrets_adaptive.smil/playlist.m3u8?checkedby:iptvcat.com')">FTV 3</li>
+        </ul>
+    </div>
+    <div id="video-container">
+        <video id="video" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+<script>
+    function playVideo(source) {
+        var video = document.getElementById('video');
+        video.src = source;
+        video.play();
+    }
+</script>
+
+</body>
+</html>
